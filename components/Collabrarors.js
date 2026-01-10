@@ -10,26 +10,50 @@ import "swiper/css/effect-coverflow";
 import "swiper/css/effect-cards";
 import "swiper/css/effect-creative";
 // import "swiper/css/autoplay";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Image from "next/image";
 import { EffectCoverflow, Navigation, Autoplay } from "swiper/modules";
 import TextReveal from "./TextReveal";
 // Styles
 
-const images = [
-  "/store.png",
-  "/store2.png",
-  "/store.png",
-  "/store.png",
-  "/store.png",
-  "/store.png",
-  "/store2.png",
-  "/store2.png",
-  "/store.png"
-];
+// const images = [
+//   "/store.png",
+//   "/store2.png",
+//   "/store.png",
+//   "/store.png",
+//   "/store.png",
+//   "/store.png",
+//   "/store2.png",
+//   "/store2.png",
+//   "/store.png"
+// ];
+
 
 export default function Mens() {
+  console.log("into collabrarores");
+  
+  const [images,setImages] = useState([])
+  console.log(images,"-------");
+  
+  useEffect(() => {
+    async function LoadStores() {
+      const myHeaders = new Headers();
+      myHeaders.append("accept", "application/json");
+
+      const requestOptions = {
+        method: "GET",
+        headers: myHeaders,
+        redirect: "follow"
+      };
+
+      fetch("https://dev.zuget.com/site/stores", requestOptions)
+        .then((response) => response.json())
+        .then((result) => console.log(setImages(result?.results)))
+        .catch((error) => console.error(error));
+    }
+    LoadStores()
+  }, [])
   return (
     <div>
 
@@ -97,11 +121,11 @@ export default function Mens() {
             }}
           >
 
-            {images.map((src, idx) => (
+            {images?.length && images.map((item, idx) => (
               <SwiperSlide key={idx}>
                 <div className="rounded-xl overflow-hidden">
                   <Image
-                    src={src}
+                    src={item?.store_image}
                     alt={`mens product ${idx + 1}`}
                     width={300}
                     height={400}

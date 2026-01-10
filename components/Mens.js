@@ -19,20 +19,21 @@ import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import TextReveal from "./TextReveal";
 
-const images = [
-    "/mens/mens1.jpg",
-    "/mens/mens2.jpg",
-    "/mens/mens3.jpg",
-    "/mens/mens5.jpg",
-    "/mens/mens3.jpg",
-    "/mens/mens4.jpg",
-    "/mens/mens5.jpg",
-    "/mens/mens3.jpg"
-];
 
 export default function Mens() {
+
+    const images = [
+        "/mens/mens1.png",
+        "/mens/Group 1171278146 (1).png",
+        "/mens/mens3.png",
+        "/mens/mens4.png",
+        "/mens/mens5.png"
+    ];
+
+
+
     return (
-        <div className="bg-white py-16 min-h-[350px] relative">
+        <div className="bg-white lg:py-16 min-h-80 relative">
             <div className="text-center mb-10">
                 <p className="text-pink-500 text-xl lg:text-3xl font-bold">Mens</p>
                 <TextReveal>
@@ -65,45 +66,41 @@ export default function Mens() {
                     ❯
                 </button>
 
-                <Swiper
-                    modules={[EffectCoverflow, Navigation, Autoplay]}
-                    effect="coverflow"
-                    centeredSlides={true}
-                    loop={true}
-                    navigation={{
-                        nextEl: ".custommens-next",
-                        prevEl: ".custommens-prev",
-                    }}
-                    slidesPerView={3}
-                    autoplay={{ delay: 3500 }}
-                    coverflowEffect={{
-                        rotate: 30,
-                        stretch: 0,
-                        depth: 100,
-                        modifier: 2,
-                        slideShadows: true,
-                    }}
-                    breakpoints={{
-                        1280: { slidesPerView: 3 },
-                        768: { slidesPerView: 2 },
-                        464: { slidesPerView: 1 },
-                    }}
-                    className="pb-10"
-                >
-                    {images.map((src, idx) => (
-                        <SwiperSlide key={idx}>
-                            <div className=" overflow-hidden">
-                                <Image
-                                    src={src}
-                                    alt={`mens product ${idx + 1}`}
-                                    width={300}
-                                    height={400}
-                                    className="object-cover rounded-xs"
-                                />
-                            </div>
-                        </SwiperSlide>
-                    ))}
-                </Swiper>
+                <div className="w-full max-w-4xl mx-auto mt-10">
+                    <Swiper
+                        modules={[Navigation]}
+                        spaceBetween={20}
+                        slidesPerView={1}
+                        pagination={{ clickable: true }}
+                        navigation={{
+                            nextEl: ".custommens-next",
+                            prevEl: ".custommens-prev",
+                        }}
+                        className="rounded-xl"
+                        breakpoints={{
+                            268: { slidesPerView: 1.6 },
+                            1024: { slidesPerView: 4 },
+                        }}
+                        loop={true}
+
+                    >
+
+
+                        {images.map((src, idx) => (
+                            <SwiperSlide>
+                                <div className="flex items-center justify-center text-white text-2xl rounded-xl">
+                                    <Image
+                                        src={src}
+                                        alt={`mens product`}
+                                        width={150}
+                                        height={150}
+                                        className="object-contain rounded-xs"
+                                    />
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </div>
             </div>
         </div>
     );
