@@ -52,16 +52,16 @@ export default function TryOn() {
             <div className="
             absolute inset-0
             bg-black/30
-            backdrop-blur-md
+            backdrop-blur-md 
           "></div>
 
             {/* Text + Button (NOT blurred) */}
-            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 p-3 h-full">
+            <div className="relative z-10 flex flex-col items-center justify-center text-center px-4 p-6 h-full">
               <h2 className="text-white text-sm lg:text-5xl lg:leading-16 font-bold drop-shadow">
                 Try Every <br /> Outfit On You
               </h2>
 
-              <Link href={'/'} onClick={handleStoreRedirect} className="mt-4 bg-green-500 text-sm lg:text-lg text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition">
+              <Link href={'/'} onClick={handleStoreRedirect} className="mt-4 bg-green-500 text-xs lg:text-lg text-white font-semibold px-4 py-2 rounded-full hover:bg-green-600 transition">
                 Try It Now
               </Link>
             </div>

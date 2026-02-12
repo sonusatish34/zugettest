@@ -40,12 +40,12 @@ export default function Testimonials() {
       className=" mx-auto w-full flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8"
     >
       <header className="text-center lg:mb-10 mb-5">
-        <p className="text-pink-500 text-xl lg:text-3xl font-bold">Testimonials</p>
+        <p className="text-[#793FDF] text-xl lg:text-3xl font-bold">Testimonials</p>
         <h2
           id="testimonials-heading"
           className=" font-bold text-lg sm:text-2xl md:text-3xl lg:text-4xl mt-2 text-black"
         >
-          What People Say About <span className="text-pink-500">Zuget</span>
+          What People Say About <span className="text-[#793FDF]">Zuget</span>
         </h2>
       </header>
 

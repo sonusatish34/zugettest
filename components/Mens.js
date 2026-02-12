@@ -24,10 +24,10 @@ export default function Mens() {
 
     const images = [
         "/mens/mens1.png",
-        "/mens/Group 1171278146 (1).png",
         "/mens/mens3.png",
         "/mens/mens4.png",
-        "/mens/mens5.png"
+        "/mens/mens5.png",
+        "/mens/mens44.png",
     ];
 
 
@@ -35,7 +35,7 @@ export default function Mens() {
     return (
         <div className="bg-white lg:py-16 min-h-80 relative">
             <div className="text-center mb-10">
-                <p className="text-pink-500 text-xl lg:text-3xl font-bold">Mens</p>
+                <p className="text-[#793FDF] text-xl lg:text-3xl font-bold">Mens</p>
                 <TextReveal>
                     <h2 className="text-black text-sm lg:text-lg mt-1 max-w-5xl mx-auto">
 
@@ -68,7 +68,7 @@ export default function Mens() {
 
                 <div className="w-full max-w-4xl mx-auto mt-10">
                     <Swiper
-                        modules={[Navigation]}
+                        modules={[Navigation, Autoplay]}
                         spaceBetween={20}
                         slidesPerView={1}
                         pagination={{ clickable: true }}
@@ -78,10 +78,15 @@ export default function Mens() {
                         }}
                         className="rounded-xl"
                         breakpoints={{
-                            268: { slidesPerView: 1.6 },
+                            268: { slidesPerView: 3 },
                             1024: { slidesPerView: 4 },
                         }}
                         loop={true}
+                        autoplay={{
+                            delay: 2500,          // time between slides (2.5s)
+                            disableOnInteraction: true, // keep autoplay after manual swipe
+                            pauseOnMouseEnter: true,     // pause on hover
+                        }}
 
                     >
 

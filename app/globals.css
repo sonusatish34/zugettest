@@ -9,7 +9,16 @@
   --font-roboto: 'Roboto', sans-serif;
   --font-lora: 'Lora', serif;
 }
+.delivery-bike {
+  position: relative;
+  animation: moveBike 2s ease-in-out infinite;
+}
 
+@keyframes moveBike {
+  0% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(20px); opacity: 1; }
+  100% { transform: translateX(0); opacity: 0.5; }
+}
 /* Global Styles */
 body {
     font-family: var(--font-lato), sans-serif;

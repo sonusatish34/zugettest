@@ -113,7 +113,7 @@
 //   return (
 //     <div className="fixed inset-0 z-50 flex items-center justify-center bg-white">
 //       <div className="relative w-20 h-20">
-        
+
 //         {/* Shirt */}
 //         <Image
 //           src="/vercel.svg"
@@ -164,7 +164,7 @@
 //   );
 // }
 
-
+"use client"
 import FilterSidebar from "@/components/FilterSidebar";
 import Header from "@/components/Header";
 import ProductCard from "@/components/ProductCard";
@@ -334,41 +334,48 @@ export const products = [
 export default function ProductsPage() {
   return (
     <>
-   
-    <Header/>
-    <div className="max-w-[1400px] mx-auto px-4 py-6">
-      {/* Header */}
-      <h1 className="text-3xl font-serif text-center mb-6">Clothing</h1>
 
-      <div className="flex gap-6">
-        {/* Sidebar */}
-        <aside className="hidden lg:block w-64 shrink-0">
-          <FilterSidebar />
-        </aside>
+      <Header />
+      <div className="max-w-[1400px] mx-auto px-4 py-6">
+        {/* Header */}
+        <h1 className="text-3xl font-serif text-center mb-6">Clothing</h1>
 
-        {/* Products */}
-        <main className="flex-1">
-          {/* Top Bar */}
-          <div className="flex justify-between items-center border-b pb-3 mb-6 text-sm">
-            <span className="text-gray-600">45,547 Items Found</span>
+        <div className="flex gap-6">
+          {/* Sidebar */}
+          <aside className="hidden lg:block w-64 shrink-0">
+            <FilterSidebar />
+          </aside>
 
-            <select className="border px-2 py-1 text-sm">
-              <option>Relevance</option>
-              <option>Price (Low to High)</option>
-              <option>Price (High to Low)</option>
-              <option>Rating</option>
-            </select>
+          {/* Products */}
+          <main className="flex-1">
+            {/* Top Bar */}
+            <div className="flex justify-between items-center border-b pb-3 mb-6 text-sm">
+              <span className="text-gray-600">45,547 Items Found</span>
+
+              <select className="border px-2 py-1 text-sm">
+                <option>Relevance</option>
+                <option>Price (Low to High)</option>
+                <option>Price (High to Low)</option>
+                <option>Rating</option>
+              </select>
+            </div>
+
+            {/* Grid */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
+              {products.map((p) => (
+                <ProductCard key={p.id} product={p} />
+              ))}
+            </div>
+          </main>
+          <div className="fixed inset-0 bg-black flex items-center justify-center z-50">
+            <h1 className="text-white text-4xl tracking-[0.3em]">ZUGET</h1>
+
+            {/* <div className="absolute inset-0 bg-white animate-[curtain_2s_forwards]"></div> */}
+
+
           </div>
-
-          {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
-            {products.map((p) => (
-              <ProductCard key={p.id} product={p} />
-            ))}
-          </div>
-        </main>
+        </div>
       </div>
-    </div>
-     </>
+    </>
   );
 }

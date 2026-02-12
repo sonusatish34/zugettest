@@ -13,7 +13,7 @@ const WhyZuget = () => {
       <header className='text-center'>
         <h2
           id='why-zuget-title'
-          className='text-pink-500 text-lg lg:text-3xl font-semibold'
+          className='text-[#793FDF] text-lg lg:text-3xl font-semibold'
         >
           Why zuget
         </h2>

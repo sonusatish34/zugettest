@@ -13,8 +13,8 @@ const lato = Lato({
 
 
 export const metadata = {
-  title: "Fast Fashion Delivery | Affordable Outfits Delivered in Minutes",
-  description: "Zuget delivers trendy mens, womens, and kids fashion in just 10 min. Shop instant outfits, daily new arrivals, affordable styles, and fast delivery across your city.",
+  title: "Fast Fashion Delivery | Affordable Outfits Delivered in 30 Minutes",
+  description: "Zuget delivers trendy mens, womens, and kids fashion in just minutes. Shop instant outfits, daily new arrivals, affordable styles, and fast delivery across your city.",
   canonical: "www.zuget.com"
 };
 

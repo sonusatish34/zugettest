@@ -11,12 +11,12 @@ const categories = [
 
 function CategoryCard({ title, image }) {
   return (
-    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-rose-50 via-white to-rose-100 p-4 backdrop-blur-md border border-rose-200/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,0,80,0.15)]">
+    <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#bc9fef] via-white to-[#c9b2f2] p-4 backdrop-blur-md border border-rose-200/40 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(255,0,80,0.15)]">
       
       {/* Glow Effect */}
       <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-tr from-pink-400/10 to-red-500/10" />
 
-      <h3 className="relative z-10 text-center text-lg font-semibold text-rose-600 mb-3 transition-colors duration-300 group-hover:text-rose-700">
+      <h3 className="relative z-10 text-center text-lg font-semibold text-[#793FDF] mb-3 transition-colors duration-300 group-hover:text-rose-700">
         {title}
       </h3>
 
@@ -39,7 +39,7 @@ export default function TopCategories() {
       
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-rose-500 to-red-600 bg-clip-text text-transparent">
+        <h2 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#793FDF] to-blue-600 bg-clip-text text-transparent">
           Top Categories
         </h2>
         <p className="text-gray-500 mt-2 text-sm md:text-base">

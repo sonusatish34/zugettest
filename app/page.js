@@ -14,17 +14,15 @@ import TopCategories from "@/components/TopCategories";
 
 export default function Home() {
   const Header = dynamic(() => import('../components/Header'), {
-  ssr: false, // Disable server-side rendering
-});
+    ssr: false, 
+  });
 
   return (
     <>
-
-
       <main className="bg-white text-white">
-        <Header locname="bangalore"/>
+        <Header locname="bangalore" />
         <Banner />
-        <Collabrarors />
+        {/* <Collabrarors /> */}
         <TopCategories />
         <Mens />
         <Womens />

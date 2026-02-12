@@ -15,7 +15,7 @@ const HowItWorks = () => {
       className=" mx-auto px-4 py-10 md:py-14 lg:py-20 lg:px-10  rounded-xl shadow-md"
     >
       <header className="text-center mb-10">
-        <p className="text-pink-500 text-sm sm:text-base md:text-lg lg:text-5xl font-medium tracking-wide">
+        <p className="text-[#793FDF] text-sm sm:text-base md:text-lg lg:text-5xl font-medium tracking-wide">
           How It Works
         </p>
         <h2

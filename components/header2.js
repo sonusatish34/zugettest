@@ -39,7 +39,7 @@ const Header = () => {
       <Link href="/" aria-label="Home">
         <div className="flex items-center gap-3 group cursor-pointer">
           <div className="flex flex-col leading-tight">
-            <span className="text-pink-500 text-xs font-bold tracking-wide">30 MIN DELIVERY</span>
+            <span className="text-[#793FDF] text-xs font-bold tracking-wide">30 MIN DELIVERY</span>
             <span className="flex items-center gap-1 text-sm font-semibold text-gray-800 group-hover:text-black transition">
               Hyderabad
             </span>
@@ -49,7 +49,7 @@ const Header = () => {
 
       {/* LOGO */}
       <Link href="/" className="relative text-2xl md:text-3xl font-bold tracking-tight text-gray-900 group">
-        Zu<span className="text-pink-500">Get</span>
+        Zu<span className="text-[#793FDF]">Get</span>
       </Link>
 
       {/* MOBILE MENU BUTTON */}
@@ -92,7 +92,7 @@ const Header = () => {
 
           <section className="border-t-2 border-gray-200 pt-4 pl-4 mt-4">
             <p className="text-sm text-gray-500">Booking Help</p>
-            <a href="tel:9111911162" className="text-xl font-bold text-pink-500">9111-9111-62</a>
+            <a href="tel:9111911162" className="text-xl font-bold text-[#793FDF]">9111-9111-62</a>
           </section>
         </div>
       </nav>

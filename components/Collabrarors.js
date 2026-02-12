@@ -31,11 +31,9 @@ import TextReveal from "./TextReveal";
 
 
 export default function Mens() {
-  console.log("into collabrarores");
-  
-  const [images,setImages] = useState([])
-  console.log(images,"-------");
-  
+
+  const [images, setImages] = useState([])
+
   useEffect(() => {
     async function LoadStores() {
       const myHeaders = new Headers();
@@ -66,11 +64,11 @@ export default function Mens() {
       />
       <div className="bg-white pt-10 pb-16 min-h-[350px]">
         <div className="text-center mb-10">
-          <p className="text-pink-500 text-xl lg:text-xl font-bold"> Our Collabrators</p>
+          <p className="text-[#793FDF] text-xl lg:text-xl font-bold"> Our Collabrators</p>
           <TextReveal>
 
             <h2 className="text-black text-sm mt-1 max-w-xl mx-auto lg:text-3xl">
-              10 Minuets Stores Near You
+              30 Minuets Stores Near You
             </h2>
           </TextReveal>
         </div>

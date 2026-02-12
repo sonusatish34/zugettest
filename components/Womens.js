@@ -20,22 +20,24 @@ import TextReveal from "./TextReveal";
 export default function Womens() {
 
     const images = [
-    "/womens/womens1.png",
-    "/womens/womens2.png",
-    "/womens/Group 1171278140 (1).png",
-    "/womens/womens4.png",
-];
+        "/womens/wm1.png",
+        "/womens/wm2.png",
+        "/womens/wm3.png",
+        "/womens/wm5.png",
+        "/womens/wm4.png",
+
+    ];
 
 
 
     return (
-        <div className="bg-white lg:py-16 min-h-80 relative">
+        <div className="bg-white lg:py-16 py-10 min-h-80 relative">
             <div className="text-center mb-10">
-                <p className="text-pink-500 text-xl lg:text-3xl font-bold">Womens</p>
+                <p className="text-[#793FDF] text-xl lg:text-3xl font-bold">Womens</p>
                 <TextReveal>
                     <h2 className="text-black text-sm lg:text-lg mt-1 max-w-5xl mx-auto">
 
-                       Explore stylish women’s clothing with our smart Try-On Feature. Instantly preview outfits, check the fit, and see which designs match your style before visiting the store. Fashion that feels personal, modern, and made for you.
+                        Explore stylish women’s clothing with our smart Try-On Feature. Instantly preview outfits, check the fit, and see which designs match your style before visiting the store. Fashion that feels personal, modern, and made for you.
                     </h2>
                 </TextReveal>
             </div>
@@ -64,7 +66,7 @@ export default function Womens() {
 
                 <div className="w-full max-w-4xl mx-auto mt-10">
                     <Swiper
-                        modules={[Navigation]}
+                        modules={[Navigation, Autoplay]}
                         spaceBetween={20}
                         slidesPerView={4}
                         pagination={{ clickable: true }}
@@ -73,6 +75,16 @@ export default function Womens() {
                             prevEl: ".customwom-prev",
                         }}
                         className="rounded-xl"
+                        breakpoints={{
+                            268: { slidesPerView: 3 },
+                            1024: { slidesPerView: 4 },
+                        }}
+                        autoplay={{
+                            delay: 2000,          // time between slides (2.5s)
+                            disableOnInteraction: true, // keep autoplay after manual swipe
+                            pauseOnMouseEnter: true,     // pause on hover
+                        }}
+                        loop={true}
 
                     >
                         {images.map((src, idx) => (

@@ -1,4 +1,5 @@
 "use client";
+import { AiOutlineThunderbolt } from "react-icons/ai";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -6,8 +7,8 @@ import Link from "next/link";
 export default function Banner() {
   return (
     <section
-      style={{ backgroundImage: "url('/bgimg.PNG')", backgroundSize: '100%',objectFit:'cover', backgroundRepeat: 'no-repeat' }}
-      className="flex pt-6 h-full flex-col md:flex-row justify-end items-center lg:pl-32 pl-28  text-gray-900 "
+      style={{ backgroundImage: "url('/bgimgs.webp')", backgroundSize: '100%',objectFit:'cover', backgroundRepeat: 'no-repeat' }}
+      className="flex py-10 h-full flex-col md:flex-row justify-end items-center lg:pl-32 pl-28  text-gray-900 "
       aria-label="Fashion delivery advertisement"
     >
       {/* Text Content */}
@@ -18,25 +19,25 @@ export default function Banner() {
           </p>
           <p className="text-lg md:text-xl lg:text-4xl text-white font-semibold mt-2 lg:pt-8">
             Delivered in{" "}
-            <span className="bg-green-400 px-2 py-1 rounded-md text-white">
-              10 Min
+            <span className="bg- px-2 py-1 rounded-md text-white">
+             30 Minutes 
             </span>
           </p>
         </div>
 
         {/* App Store Icons */}
-        <div className="flex lg:gap-x-12 gap-x-6 ">
+        <div className="flex lg:gap-x-12 gap-x-6 lg:pt-10">
           <Image
-            src="/huokkk.png"
+            src="/mobileframe3.webp"
             alt="Fashion banner showcasing latest collection"
-            width={500}
-            height={500}
-            className="w-12 md:w-32 lg:w-[150px] rounded-lg  h-auto object-contain transition-transform duration-300 hover:scale-105"
+            width={1000}
+            height={1000}
+            className="w-24 lg:scale-200 scale-125 md:w-36 lg:w-72 rounded-lg h-auto object-contain transition-transform duration-300"
             priority
           />
           <div className="flex flex-col justify-center md:justify-start gap-4 ">
             <Link
-              href=""
+              href="https://apps.apple.com/in/app/zuget/id6756003689"
               aria-label="Download on the App Store"
               className="focus:outline-none focus:ring-2 focus:ring-green-400 rounded lg:hover:scale-105"
             >

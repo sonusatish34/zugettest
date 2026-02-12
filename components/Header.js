@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FiPhoneCall } from 'react-icons/fi';
-import { IoIosArrowDown ,IoIosArrowUp} from "react-icons/io";
+import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 
 const Header = ({ locname = '' }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,22 +13,22 @@ const Header = ({ locname = '' }) => {
   // Remove router-related logic and directly handle paths with locname
   const basePath = locname === 'bangalore' ? '/bangalore' : '';
   useEffect(() => {
-  if (isOpen) {
-    // prevent background scroll
-    document.body.style.overflow = 'hidden';
-    document.body.style.touchAction = 'none'; // improves mobile behavior
-  } else {
-    // restore scroll
-    document.body.style.overflow = '';
-    document.body.style.touchAction = '';
-  }
+    if (isOpen) {
+      // prevent background scroll
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none'; // improves mobile behavior
+    } else {
+      // restore scroll
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
 
-  // cleanup on unmount
-  return () => {
-    document.body.style.overflow = '';
-    document.body.style.touchAction = '';
-  };
-}, [isOpen]);
+    // cleanup on unmount
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    };
+  }, [isOpen]);
 
   const handleClickOutside = (event) => {
     if (
@@ -79,30 +79,30 @@ const Header = ({ locname = '' }) => {
       <Link href="/" aria-label="Home">
         <div className="flex items-center gap-3 group cursor-pointer">
           <div className="flex flex-col leading-tight">
-            <span className="text-pink-500 text-xs font-bold tracking-wide">30 MIN DELIVERY</span>
+            <span className="text-[#793FDF] text-xs font-bold tracking-wide">30 MIN DELIVERY</span>
             <span className="flex items-center gap-1 text-sm font-semibold text-gray-800 group-hover:text-black transition">
-              Hyderabad <IoIosArrowDown size={20}/>
+              Hyderabad <IoIosArrowDown size={20} />
             </span>
           </div>
         </div>
       </Link>
       {/* LOGO */}
       <Link href="/" className="relative text-2xl md:text-3xl font-bold tracking-tight text-gray-900 group">
-        Zu<span className="text-pink-500">Get</span>
+        Zu<span className="text-[#793FDF]">Get</span>
       </Link>
 
       <ul className="lg:flex gap-x-12 hidden  pl-4 text-black font-semibold text-sm">
-        <li><Link className='hover:border-b-2 hover:border-b-green-300' href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
-        <li><Link className='hover:border-b-2 hover:border-b-green-300' href="/shops" onClick={() => setIsOpen(false)}>Shops</Link></li>
-        <li><Link className='hover:border-b-2 hover:border-b-green-300' href="/contact-us" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
-        <li><Link className='hover:border-b-2 hover:border-b-green-300' href="/about-us" onClick={() => setIsOpen(false)}>About Us</Link></li>
+        <li><Link className='hover:border-b-2 hover:border-b-[#793FDF]' href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+        <li><Link className='hover:border-b-2 hover:border-b-[#793FDF]' href="/shops" onClick={() => setIsOpen(false)}>Shops</Link></li>
+        <li><Link className='hover:border-b-2 hover:border-b-[#793FDF]' href="/contact-us" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
+        <li><Link className='hover:border-b-2 hover:border-b-[#793FDF]' href="/about-us" onClick={() => setIsOpen(false)}>About Us</Link></li>
       </ul>
 
 
       <div className="lg:hidden block pt-2">
         <button
           ref={buttonRef}
-          className="z-40 text-pink-500"
+          className="z-40 text-[#793FDF]"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
           aria-expanded={isOpen}
@@ -142,7 +142,7 @@ const Header = ({ locname = '' }) => {
           <Link href="/" aria-label="Home" onClick={() => setIsOpen(false)}>
             <div className="flex items-center gap-3 pb-6">
               <p className="text-3xl font-extrabold tracking-tight text-gray-900">
-                Zu<span className="text-pink-500">Get</span>
+                Zu<span className="text-[#793FDF]">Get</span>
               </p>
             </div>
           </Link>
@@ -163,7 +163,7 @@ const Header = ({ locname = '' }) => {
               group flex items-center justify-between
               text-gray-800
               transition-all duration-300
-              hover:text-pink-500
+              hover:text-[#793FDF]
             "
                 >
                   <span className="group-hover:translate-x-2 transition-transform duration-300">
@@ -192,7 +192,7 @@ const Header = ({ locname = '' }) => {
             <p className="text-sm text-gray-500 mb-1">Need help?</p>
             <a
               href="tel:9111911162"
-              className="text-2xl font-extrabold text-pink-500 hover:underline"
+              className="text-2xl font-extrabold text-[#793FDF] hover:underline"
             >
               9111-9111-62
             </a>
