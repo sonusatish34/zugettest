@@ -1,4 +1,4 @@
-import { Lato } from "next/font/google";
+import { Lato,Geist } from "next/font/google";
 import "./globals.css";
 
 const lato = Lato({
@@ -6,6 +6,10 @@ const lato = Lato({
   weight: ["100", "300", "400", "700", "900"],
   variable: "--font-lato",
 });
+const geistSans = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist-sans',
+})
 
 export const metadata = {
   title: "Zuget | Hyperlocal Fashion Marketplace - Hyderabad",
@@ -17,9 +21,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${lato.variable} antialiased`}>
+      <body className={`${geistSans.variable} antialiased`}>
         {children}
       </body>
+      
     </html>
   );
 }

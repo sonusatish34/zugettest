@@ -6,9 +6,25 @@ import { IoIosArrowDown } from "react-icons/io";
 
 const HeaderOverlay = ({ locname = '' }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
 
+  // Handle Scroll to change Navbar appearance
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
@@ -23,6 +39,7 @@ const HeaderOverlay = ({ locname = '' }) => {
     };
   }, [isOpen]);
 
+  // Close mobile menu on outside click
   const handleClickOutside = (event) => {
     if (
       menuRef.current && !menuRef.current.contains(event.target) &&
@@ -42,65 +59,74 @@ const HeaderOverlay = ({ locname = '' }) => {
   }, [isOpen]);
 
   return (
-    <div className="relative w-full min-h-[304px] md:min-h-[750px] lg:min-h-[850px] flex flex-col overflow-hidden bg-[#5F13E7]">
+    <div className="relative w-full min-h-[264px] md:min-h-[750px] lg:min-h-[850px] flex flex-col overflow-hidden bg-slate-50 font-sans">
       
       {/* BACKGROUND BANNER IMAGE */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Image
-          src="/Web-Page.webp"
+          src="/WhatsApp Image 2026-06-08 at 12.39.40 PM.jpeg"
           alt="Web Page Banner Backdrop"
           fill
           priority
-          className="lg:object-cover object-contain lg:object-top object-bottom transform scale-"
+          className="lg:object-cover object-contain lg:object-top object-bottom"
         />
+        {/* Subtle gradient overlay to ensure top navbar text is readable before scrolling */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent opacity-60" />
       </div>
 
-      {/* FIXED GLASS NAVIGATION BAR CONTAINER */}
-      <header className="relative z-30 px-6 md:px-16 lg:px-24 py-5 flex justify-between items-center bg-black/5 backdrop-blur-xs border-b border-white/5 shadow-xs">
+      {/* FIXED NAVIGATION BAR */}
+      <header 
+        className={`fixed top-0 left-0 right-0 z-40 px-5 md:px-12 lg:px-20 flex justify-between items-center transition-all duration-400 ease-in-out ${
+          "py-3 md:py-4 bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-b border-slate-200 -translate-y-0" 
+            
+        }`}
+      >
         
         {/* Location Dropdown */}
-        <div className="flex items-center gap-3 cursor-pointer select-none">
+        <div className="flex items-center gap-3 cursor-pointer select-none group">
           <div className="flex flex-col leading-tight">
-            <span className="text-pink-300 text-[10px] font-extrabold tracking-widest uppercase">30 Min Delivery</span>
-            <span className="flex items-center gap-1 text-sm font-bold text-white hover:text-pink-200 transition-colors">
-              Hyderabad <IoIosArrowDown className="text-pink-400 animate-pulse" size={16} />
+            <span className={`text-[10px] font-extrabold tracking-widest uppercase transition-colors ${scrolled ? "text-[#793FDF]" : "text-[#793FDF]/90"}`}>
+              30 Min Delivery
+            </span>
+            <span className={`flex items-center gap-1 text-sm font-bold transition-colors text-black hover:text-slate-200}`}>
+              Hyderabad <IoIosArrowDown className={` "text-black"} animate-pulse`} size={16} />
             </span>
           </div>
         </div>
 
         {/* LOGO */}
-        <Link href="/" className="text-2xl md:text-3xl font-black tracking-tighter text-white drop-shadow-md transition-transform active:scale-95">
-          Zu<span className="text-yellow-400">Get</span>
+        <Link href="/" className={`tracking-wide text-2xl md:text-3xl font-black tracking-tighter drop-shadow-sm transition-all active:scale-95 text-black`}>
+          Zu<span className="text-[#793FDF]">Get</span>
         </Link>
 
         {/* Desktop Navigation Links */}
         <nav className="hidden lg:block">
-          <ul className="flex gap-x-10 text-white font-bold text-sm tracking-wide">
-            <li><Link className="relative py-1 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-400 hover:after:w-full after:transition-all" href="/">Home</Link></li>
-            <li><Link className="relative py-1 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-400 hover:after:w-full after:transition-all" href="/shops">Shops</Link></li>
-            <li><Link className="relative py-1 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-400 hover:after:w-full after:transition-all" href="/contact-us">Contact Us</Link></li>
-            <li><Link className="relative py-1 transition-all duration-300 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-yellow-400 hover:after:w-full after:transition-all" href="/about-us">About Us</Link></li>
+          <ul className={`flex gap-x-10 font-bold text-sm tracking-wide transition-colors text-black`}>
+            {['Home', 'Shops', 'Contact Us', 'About Us'].map((item, idx) => (
+              <li key={idx}>
+                <Link 
+                  href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`}
+                  className={`relative py-1 transition-all duration-300 hover:text-[#793FDF] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-[#793FDF] hover:after:w-full after:transition-all after:duration-300`}
+                >
+                  {item}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
-        {/* Mobile Hamburger Menu Trigger Button */}
-        <div className="lg:hidden block">
+        {/* Mobile Hamburger Menu Trigger Button (Animated CSS Icon) */}
+        <div className="lg:hidden block z-50">
           <button
             ref={buttonRef}
-            className="z-40 text-white focus:outline-hidden"
+            className="relative flex flex-col justify-center items-center w-8 h-8 focus:outline-none group"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
-            {!isOpen ? (
-              <svg className="w-6 h-6 fill-current hover:text-yellow-400 transition-colors" viewBox="0 0 24 24">
-                <path d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6 fill-current text-purple-900" viewBox="0 0 24 24">
-                <path d="M18.707 5.293a1 1 0 0 0-1.414 0L12 9.586 6.707 4.293a1 1 0 1 0-1.414 1.414L10.586 11l-5.293 5.293a1 1 0 0 0 1.414 1.414L12 12.414l5.293 5.293a1 1 0 0 0 1.414-1.414L13.414 11l5.293-5.293a1 1 0 0 0 0-1.414z" />
-              </svg>
-            )}
+            <span className={`block w-6 h-[2px] rounded-full bg-[#793FDF] transition-all duration-300 ease-out ${isOpen ? "bg-slate-900 rotate-45 translate-y-1.5" : scrolled ? "bg-slate-900 -translate-y-1" : "bg-w -translate-y-1 group-hover:bg-[#793FDF]"}`} />
+            <span className={`block w-6 h-[2px] rounded-full bg-[#793FDF] transition-all duration-300 ease-out ${isOpen ? "opacity-0" : "opacity-100"} ${scrolled ? "bg-slate-900" : "bg-whi group-hover:bg-[#793FDF]"}`} />
+            <span className={`block w-6 h-[2px] rounded-full bg-[#793FDF] transition-all duration-300 ease-out ${isOpen ? "bg-slate-900 -rotate-45 -translate-y-1.5" : scrolled ? "bg-slate-900 translate-y-1" : "bg-whit translate-y-1 group-hover:bg-[#793FDF]"}`} />
           </button>
         </div>
 
@@ -109,48 +135,38 @@ const HeaderOverlay = ({ locname = '' }) => {
           ref={menuRef}
           aria-label="Mobile Navigation"
           className={`
-            fixed top-0 right-0 z-50
-            h-screen w-[75%] sm:w-[60%]
-            bg-white/90 backdrop-blur-2xl
-            border-l border-white/20
-            shadow-[0_0_50px_rgba(0,0,0,0.3)]
-            transition-transform duration-300 ease-in-out
+            fixed top-0 right-0 h-screen w-[75%] sm:w-[50%]
+            bg-white/95 backdrop-blur-xl border-l border-slate-100
+            shadow-[-10px_0_40px_rgba(0,0,0,0.1)]
+            transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]
             ${isOpen ? "translate-x-0" : "translate-x-full"}
           `}
         >
-          <div className="p-8 pt-24 flex flex-col gap-6 text-xl font-bold text-purple-950">
-            <Link href="/" className="hover:text-purple-600 transition-colors" onClick={() => setIsOpen(false)}>Home</Link>
-            <Link href="/shops" className="hover:text-purple-600 transition-colors" onClick={() => setIsOpen(false)}>Shops</Link>
-            <Link href="/about-us" className="hover:text-purple-600 transition-colors" onClick={() => setIsOpen(false)}>About Us</Link>
-            <Link href="/contact-us" className="hover:text-purple-600 transition-colors" onClick={() => setIsOpen(false)}>Contact Us</Link>
+          <div className="p-8 pt-28 flex flex-col gap-6 text-xl font-bold text-slate-800">
+            {['Home', 'Shops', 'About Us', 'Contact Us'].map((item, idx) => (
+              <Link 
+                key={idx}
+                href={item === 'Home' ? '/' : `/${item.toLowerCase().replace(' ', '-')}`} 
+                className="hover:text-[#793FDF] hover:translate-x-2 transition-all duration-200 border-b border-slate-100 pb-4" 
+                onClick={() => setIsOpen(false)}
+              >
+                {item}
+              </Link>
+            ))}
+          </div>
+          
+          {/* Mobile Menu Footer Element */}
+          <div className="absolute bottom-10 left-8 right-8">
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-100 text-center">
+              <span className="text-xs font-bold text-slate-500 uppercase tracking-widest block mb-1">Partner with us</span>
+              <span className="text-sm font-bold text-[#793FDF]">0% Commission</span>
+            </div>
           </div>
         </nav>
       </header>
 
-      {/* DYNAMIC HERO BODY SEGMENT (Shares the background asset space) */}
-      <div className="relative z-10 flex-1 grid grid-cols-1 lg:grid-cols-12 items-center px-6 md:px-16 lg:px-24 py-12 lg:py-0">
-        
-        {/* Left Columns - Text copy & CTA */}
-        {/* <div className="lg:col-span-7 flex flex-col space-y-6 text-left max-w-2xl">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-none tracking-tight drop-shadow-xs">
-            0% Commission <br className="hidden sm:inline"/>
-            <span className="text-yellow-400 drop-shadow-md">Construct</span>
-          </h1>
-          
-          <p className="text-base sm:text-lg md:text-xl font-medium text-purple-100/90 leading-relaxed max-w-xl">
-            Empowering Local Shop Owners Through India's Premier Fast B2C Digital Commerce Platform.
-          </p>
-
-          <div className="pt-4">
-            <button className="px-10 py-4 bg-white text-purple-900 font-extrabold text-sm tracking-wider uppercase rounded-xl shadow-xl shadow-black/10 hover:bg-yellow-400 hover:text-black hover:shadow-yellow-400/20 active:scale-98 transition-all duration-200">
-              Enroll Now
-            </button>
-          </div>
-        </div> */}
-
-        {/* Right Columns - Retains clear layout space matching the model composition */}
-        <div className="hidden lg:block lg:col-span-5 h-full relative" />
-      </div>
+      {/* DYNAMIC HERO BODY SEGMENT */}
+      
 
     </div>
   );

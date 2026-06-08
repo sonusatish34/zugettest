@@ -17,6 +17,8 @@ import FashionPhysicsBox from "@/components/FashionPhysicsBox";
 import ElegantCarousel from "@/components/ElegantCarousel";
 import Carousel from "@/components/Carousal";
 import ShopByCat from "@/components/ShopByCat";
+import AppDownload from "@/components/AppDownload";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function Home() {
   const Header = dynamic(() => import('../components/Header'), {
@@ -36,11 +38,13 @@ export default function Home() {
         <TryOn />
         {/* <HowItWorks /> */}
         {/* <GameClothes /> */}
-        <TopCategories />
         {/* <ElegantCarousel /> */}
         <Carousel/>
         <ShopByCat/>
+        <AppDownload />
+        {/* <TopCategories /> */}
         <Footer />
+        <ScrollToTopButton/>
       </main>
     </>
   );

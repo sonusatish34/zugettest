@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function TopCategories() {
   return (
-    <div className="h-screen">
+    <div className="">
       {/* <Image
           src={'/TryOut.jpeg'}
           alt={"title"}
@@ -18,7 +18,7 @@ export default function TopCategories() {
           alt={"title"}
           width={1000}
           height={1000}
-          className="h-screen w-full"
+          className="lg:h-screen h-[274px] w-full "
         />
     </div>
   );

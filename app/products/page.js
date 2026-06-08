@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 
 export default function StorePage() {
 
-
-
     function ProductDetailModal({ product, onClose }) {
         // State for active image and selected size
         const [activeImage, setActiveImage] = useState(product.model_image_front_duplicate);
