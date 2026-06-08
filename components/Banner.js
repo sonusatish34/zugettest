@@ -67,20 +67,7 @@ export default function Banner() {
 
           </div>
         </div>
-    
       </div>
-
-      {/* <div className="mt-8 md:mt-0 md:ml-8">
-        <Image
-          src="/homebanner.webp"
-          alt="Fashion banner showcasing latest collection"
-          width={500}
-          height={500}
-          className="w-64 md:w-96 lg:w-[300px] h-auto object-contain transition-transform duration-300 hover:scale-105"
-          priority
-        />
-      </div> */}
-
     </section>
   );
 }

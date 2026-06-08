@@ -30,23 +30,14 @@ export default function Mens() {
         "/mens/mens44.png",
     ];
 
-
-
     return (
         <div className="bg-white lg:py-16 min-h-80 relative">
             <div className="text-center mb-10">
                 <p className="text-[#793FDF] text-xl lg:text-3xl font-bold">Mens</p>
-                <TextReveal>
-                    <h2 className="text-black text-sm lg:text-lg mt-1 max-w-5xl mx-auto">
 
-                        Discover men’s clothing with a smart Try-On Feature. Instantly preview how shirts, tees, trousers, and ethnic wear look on you before stepping into the store. Style made simple and personal.
-                    </h2>
-                </TextReveal>
             </div>
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 relative">
-
-                {/* Custom Prev Arrow */}
                 <button
                     className="custommens-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 
                                bg-white text-black rounded-full w-10 h-10 flex items-center
@@ -56,7 +47,6 @@ export default function Mens() {
                     ❮
                 </button>
 
-                {/* Custom Next Arrow */}
                 <button
                     className="custommens-next absolute right-0 top-1/2 -translate-y-1/2 z-10 
                                bg-white text-black rounded-full w-10 h-10 flex items-center
@@ -83,13 +73,12 @@ export default function Mens() {
                         }}
                         loop={true}
                         autoplay={{
-                            delay: 2500,          // time between slides (2.5s)
-                            disableOnInteraction: true, // keep autoplay after manual swipe
+                            delay: 2500,          // time between slides (2.5s) 
+                            disableOnInteraction: true, // keep autoplay after manual swipe 
                             pauseOnMouseEnter: true,     // pause on hover
                         }}
 
                     >
-
 
                         {images.map((src, idx) => (
                             <SwiperSlide>
@@ -105,8 +94,10 @@ export default function Mens() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+                    
                 </div>
             </div>
         </div>
     );
 }
+4

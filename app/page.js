@@ -11,6 +11,12 @@ import HowItWorks from "@/components/HowItWorks";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import TopCategories from "@/components/TopCategories";
+import OwnerBanner from "@/components/OwnerBanner";
+import GameClothes from "@/components/GameClothes";
+import FashionPhysicsBox from "@/components/FashionPhysicsBox";
+import ElegantCarousel from "@/components/ElegantCarousel";
+import Carousel from "@/components/Carousal";
+import ShopByCat from "@/components/ShopByCat";
 
 export default function Home() {
   const Header = dynamic(() => import('../components/Header'), {
@@ -20,15 +26,20 @@ export default function Home() {
   return (
     <>
       <main className="bg-white text-white">
-        <Header locname="bangalore" />
-        <Banner />
-        {/* <Collabrarors /> */}
-        <TopCategories />
-        <Mens />
+        {/* <Header locname="bangalore" /> */}
+        {/* <Banner /> */}
+        <OwnerBanner />
+         <Collabrarors />
+         {/* <FashionPhysicsBox /> */}
+        {/*<Mens />
         <Womens />
         <TryOn />
         {/* <HowItWorks /> */}
-        <Testimonials />
+        {/* <GameClothes /> */}
+        <TopCategories />
+        {/* <ElegantCarousel /> */}
+        <Carousel/>
+        <ShopByCat/>
         <Footer />
       </main>
     </>
