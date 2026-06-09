@@ -4,22 +4,17 @@ import { motion } from "framer-motion";
 
 const categories = [
   {
-    title: "Tops & Dresses",
-    count: "2,400+ styles",
-    image: "https://images.unsplash.com/photo-1483985988355-763728e1935",
-  },
-  {
-    title: "Men's Topwear",
+    title: "Men's wear",
     count: "1,800+ styles",
-    image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+    image: "/menswear.jpg",
   },
   {
-    title: "Women's Ethnic",
+    title: "Women's Wear",
     count: "3,100+ styles",
-    image: "https://images.unsplash.com/photo-1529139574466-a303027c1d8b",
+    image: "womenswear.jpg",
   },
   {
-    title: "Winter Wear",
+    title: "Shirts",
     count: "900+ styles",
     image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
   },
@@ -29,7 +24,12 @@ const categories = [
     image: "https://images.unsplash.com/photo-1542272604-787c3835535d",
   },
   {
-    title: "New Arrivals",
+    title: "Women Kurthas",
+    count: "Daily Drops",
+    image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c",
+  },
+  {
+    title: "Hoodies",
     count: "Daily Drops",
     image: "https://images.unsplash.com/photo-1496747611176-843222e1e57c",
   },
@@ -37,7 +37,7 @@ const categories = [
 
 export default function ShopByCat() {
   return (
-    <section className="relative overflow-hidden bg-slate-50 py-2 lg:py-32 font-sans">
+    <section className="relative overflow-hidden bg-slate-50 py-2 lg:py-32 ">
 
       {/* Trendy Light Background Elements */}
       <div 

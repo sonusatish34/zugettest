@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 const MARQUEE_ITEMS = [
   "Free same-day delivery",
@@ -87,7 +88,7 @@ const STATS = [
 
 export default function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-slate-50 text-slate-700 font-sans">
+    <footer className="relative overflow-hidden bg-slate-50 text-slate-700 ">
       
       {/* Trendy Light Background Elements */}
       <div 
@@ -108,7 +109,13 @@ export default function Footer() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 py-16 sm:px-8 lg:px-12">
         
         {/* Stats row */}
-        <div className="mb-16 grid grid-cols-3 divide-x divide-slate-100 border border-slate-200 bg-white shadow-sm rounded-2xl overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-120px" }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-16 grid grid-cols-3 divide-x divide-slate-100 border border-slate-200 bg-white shadow-sm rounded-2xl overflow-hidden"
+        >
           {STATS.map((s) => (
             <div
               key={s.label}
@@ -122,7 +129,7 @@ export default function Footer() {
               </span>
             </div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Main grid */}
         <div className="grid gap-12 lg:grid-cols-[1.8fr_1fr_1fr]">

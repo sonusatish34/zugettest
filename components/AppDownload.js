@@ -23,7 +23,7 @@ export default function DownloadAppSection() {
   };
 
   return (
-    <section className="relative w-full bg-slate-50 py-20 md:py-32 px-5 md:px-12 lg:px-24 overflow-hidden font-sans">
+    <section className="relative w-full bg-slate-50 py-20 md:py-32 px-5 md:px-12 lg:px-24 overflow-hidden ">
       
       {/* Trendy Light Background Elements */}
       <div 
@@ -162,7 +162,7 @@ export default function DownloadAppSection() {
                 {/* Bottom Card Mockup */}
                 <div className="absolute bottom-4 md:bottom-6 left-3 right-3 md:left-4 md:right-4 bg-white/10 backdrop-blur-md border border-white/20 p-3 md:p-4 rounded-xl md:rounded-2xl text-white">
                   <h3 className="text-base md:text-lg font-bold">Zara Summer Drop</h3>
-                  <p className="text-[10px] md:text-xs font-medium text-slate-200 mt-1">Out for delivery • Banswada</p>
+                  <p className="text-[10px] md:text-xs font-medium text-slate-200 mt-1">Out for delivery • Hyderabad</p>
                   <div className="mt-2 md:mt-3 h-1 md:h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
                     <div className="h-full bg-[#793FDF] w-3/4 rounded-full" />
                   </div>

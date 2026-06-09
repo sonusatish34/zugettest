@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode } from "swiper/modules";
 
@@ -123,7 +124,13 @@ export default function StoreCarousel() {
         <div className="relative z-10 max-w-[1400px] mx-auto px-5 sm:px-8 lg:px-12">
           
           {/* Header Section (Matches Screenshot) */}
-          <div className="mb-10">
+          <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-120px" }}
+          transition={{ duration: 0.75, ease: "easeOut" }}
+          className="mb-10"
+        >
             <p className="text-[#793FDF] text-[11px] font-bold tracking-[0.2em] uppercase mb-2">
               Partner Stores
             </p>
@@ -131,7 +138,7 @@ export default function StoreCarousel() {
               Shop the<br />
               <span className="text-[#793FDF]">City's Best.</span>
             </h2>
-          </div>
+          </motion.div>
 
           {/* Stores Slider Title */}
           <div className="mb-4">

@@ -10,7 +10,7 @@ const STEPS = [
     headline: "Create your seller account",
     desc: "Fill in your shop details, upload your store logo, and complete onboarding requirements to get verified instantly.",
     bullets: ["Business name & address", "Bank account for payouts"],
-    image: "/stepstosell/Register.webp",
+    image: "/stepstosell/01.webp",
     accent: "#793FDF",
     lightAccent: "#ede9fb",
     icon: "✦",
@@ -21,7 +21,7 @@ const STEPS = [
     headline: "Upload your clothing catalogue",
     desc: "Add your products — dresses, kurtas, jackets, anything you sell. Set sizes, prices, and stock with our easy-to-use dashboard.",
     bullets: ["Product photos & descriptions", "Size & inventory setup"],
-    image: "/stepstosell/Sell.webp",
+    image: "/stepstosell/02.webp",
     accent: "#C026D3",
     lightAccent: "#fce7ff",
     icon: "◈",
@@ -32,7 +32,7 @@ const STEPS = [
     headline: "Get paid on time, every time",
     desc: "When a customer orders your clothes, you earn. Zuget processes secure payments directly to your account without delays.",
     bullets: ["Transparent payment cycle", "Auto settlement to bank"],
-    image: "/stepstosell/Earn.webp",
+    image: "/stepstosell/02.webp",
     accent: "#0EA5E9",
     lightAccent: "#e0f2fe",
     icon: "❋",
@@ -43,7 +43,7 @@ const STEPS = [
     headline: "Scale your clothing business",
     desc: "Get tailored support, promotional tools, and deep analytics to understand your customers and grow your store.",
     bullets: ["Seller analytics & insights", "Promotional campaigns"],
-    image: "/stepstosell/Grow.webp",
+    image: "/stepstosell/04.webp",
     accent: "#10B981",
     lightAccent: "#d1fae5",
     icon: "⬡",
@@ -167,7 +167,7 @@ function StepCard({ step, index }) {
 /* ── Main Component ── */
 export default function ZugetSellingStepsTimeline() {
   return (
-    <section className="relative overflow-hidden py-10 md:py-32 bg-slate-50 font-sans">
+    <section className="relative overflow-hidden py-10 md:py-32 bg-slate-50 ">
       
       {/* Super lightweight CSS grid background instead of heavy SVG noise */}
       <div 
