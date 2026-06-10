@@ -11,6 +11,7 @@ import AppDownload from "@/components/AppDownload";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import SplashScreen from "@/components/SplashScreen"; // Adjust path as necessary
 import { useState, useEffect } from "react";
+import TwoImages from "@/components/TwoImages";
 export default function Home() {
   
   const Header = dynamic(() => import('../components/Header'), {
@@ -33,31 +34,32 @@ const [showSplash, setShowSplash] = useState(true);
   };
   return (
     <>
-    <SplashScreen isVisible={showSplash} onComplete={handleSplashComplete} />
+    {/* <SplashScreen isVisible={showSplash} onComplete={handleSplashComplete} /> */}
       <motion.main
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.85, ease: "easeOut" }}
         className="bg-white text-white"
       >
+        <TwoImages/>
         {/* <Header locname="bangalore" /> */}
         {/* <Banner /> */}
-        <OwnerBanner />
-        <OwnerBannerOrg />
+        {/* <OwnerBanner /> */}
+        {/* <OwnerBannerOrg /> */}
          {/* <Womens /> */}
-         <Collabrarors />
+         {/* <Collabrarors /> */}
          {/* <FashionPhysicsBox /> */}
         {/*<Mens />
         <TryOn />
         {/* <HowItWorks /> */}
         {/* <GameClothes /> */}
         {/* <ElegantCarousel /> */}
-        <Carousel/>
-        <ShopByCat/>
-        <AppDownload />
+        {/* <Carousel/> */}
+        {/* <ShopByCat/> */}
+        {/* <AppDownload /> */}
         {/* <TopCategories /> */}
-        <Footer />
-        <ScrollToTopButton/>
+        {/* <Footer /> */}
+        {/* <ScrollToTopButton/> */}
       </motion.main>
     </>
   );
