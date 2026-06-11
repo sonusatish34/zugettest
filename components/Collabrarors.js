@@ -80,40 +80,17 @@ function StepCard({ step, index }) {
         className={`relative ${isEven ? "md:order-2" : "md:order-1"} flex justify-center items-center`}
         style={{ zIndex: 1 }}
       >
-        <div className="relative group">
-          {/* Static blurred glow (replaced expensive animated ones) */}
-          <div
-            className="absolute -inset-4 rounded-3xl blur-xl opacity-20 transition-opacity duration-500 group-hover:opacity-40"
-            style={{ background: step.accent, zIndex: 0 }}
+        <div
+          className="relative w-[300px] h-[340px] sm:w-[380px] sm:h-[420px] flex justify-center items-center"
+        >
+          <Image
+            src={step.image}
+            alt={step.title}
+            fill
+            sizes="(max-width: 768px) 300px, 380px"
+            // Changed to object-contain to prevent cropping, kept rounded-3xl here so the visible edges are round
+            className="object-contain rounded-3xl"
           />
-
-          {/* Image container */}
-          <div
-            className="relative w-[300px] h-[340px] sm:w-[380px] sm:h-[420px] rounded-[2rem] overflow-hidden border border-slate-200/50 shadow-xl transition-transform duration-500 group-hover:-translate-y-2"
-            style={{ zIndex: 1 }}
-          >
-            <Image
-              src={step.image}
-              alt={step.title}
-              fill
-              sizes="(max-width: 768px) 300px, 380px"
-              className="object-cover"
-            />
-            {/* Color overlay */}
-            <div
-              className="absolute inset-0 opacity-20 mix-blend-multiply transition-opacity duration-500 group-hover:opacity-10"
-              style={{ background: `linear-gradient(135deg, ${step.accent}, transparent)` }}
-            />
-          </div>
-
-          {/* Floating badge */}
-          <div
-            className="absolute -bottom-5 -right-5 flex items-center gap-2 px-5 py-3 rounded-2xl shadow-xl border border-white/50 backdrop-blur-md"
-            style={{ background: step.accent, zIndex: 2 }}
-          >
-            <span className="text-white text-lg">{step.icon}</span>
-            <span className="text-white font-bold text-sm tracking-wide">{step.title}</span>
-          </div>
         </div>
       </div>
 

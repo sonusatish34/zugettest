@@ -6,7 +6,7 @@ const categories = [
   {
     title: "Men's wear",
     count: "1,800+ styles",
-    image: "/menswear.jpg",
+    image: "/Zuget_image.png",
   },
   {
     title: "Women's Wear",
@@ -77,7 +77,7 @@ export default function ShopByCat() {
             View all categories
             <svg 
               className="w-4 h-4 transition-transform group-hover:translate-x-1" 
-              fill="none" 
+              fill="none"
               viewBox="0 0 24 24" 
               stroke="currentColor"
             >

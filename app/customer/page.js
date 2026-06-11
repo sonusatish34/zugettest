@@ -10,6 +10,8 @@ import ShopByCat from "@/components/ShopByCat";
 import AppDownload from "@/components/AppDownload";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 import TopCategories from "@/components/TopCategories";
+import HappyCustomers from "@/components/HappyCustomers";
+import CustomerBannerOrg from "@/components/CustomerBannerOrg";
 export default function OwnerHome() {
 
   return (
@@ -22,8 +24,8 @@ export default function OwnerHome() {
       >
         {/* <Header locname="bangalore" /> */}
         {/* <Banner /> */}
-        <OwnerBanner />
-        {/* <OwnerBannerOrg /> */}
+        {/* <OwnerBanner /> */}
+        <CustomerBannerOrg />
          {/* <Womens /> */}
          {/* <Collabrarors /> */}
          {/* <FashionPhysicsBox /> */}
@@ -32,10 +34,11 @@ export default function OwnerHome() {
         {/* <HowItWorks /> */}
         {/* <GameClothes /> */}
         {/* <ElegantCarousel /> */}
-        <Carousel/>
+        {/* <Carousel/> */}
         <ShopByCat/>
         <AppDownload />
         <TopCategories />
+        <HappyCustomers/>
         <Footer />
         <ScrollToTopButton/>
       </motion.main>

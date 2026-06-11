@@ -18,7 +18,7 @@ export default function TopCategories() {
           alt={"title"}
           width={1000}
           height={1000}
-          className="lg:h-screen h-[274px] w-full "
+          className="lg:h-screen h-full w-full "
         />
     </div>
   );

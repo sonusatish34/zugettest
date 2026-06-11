@@ -11,7 +11,7 @@ import 'swiper/css/effect-fade';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const HeaderSimple = () => {
+const CustomerBannerOrg = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const buttonRef = useRef(null);
@@ -52,13 +52,11 @@ const HeaderSimple = () => {
 
 
   const slides = [
-    { id: 1, url: '/zuget cover image (2).png', },
-    { id: 2, url: '/ownerbanners/on2.jpeg', },
-    { id: 3, url: '/ownerbanners/on3.jpeg' },
-    { id: 4, url: '/ownerbanners/on4.jpeg' },
-    { id: 5, url: '/ownerbanners/on5.jpeg' },
-    { id: 6, url: '/ownerbanners/on6.jpeg' },
-    { id: 7, url: '/ownerbanners/on1.jpeg', },
+    { id: 2, url: '/customerbanners/4.jpeg', },
+    { id: 3, url: '/customerbanners/3.jpeg' },
+    { id: 4, url: '/customerbanners/2.jpeg' },
+    { id: 5, url: '/customerbanners/1.jpeg' },
+  
   ];
 
   return (
@@ -180,4 +178,4 @@ const HeaderSimple = () => {
   );
 };
 
-export default HeaderSimple;
+export default CustomerBannerOrg;
