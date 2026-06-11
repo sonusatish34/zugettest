@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-
+import Link from "next/link";
 const categories = [
   {
     title: "Men's wear",
@@ -100,7 +100,7 @@ export default function ShopByCat() {
               className="group relative overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-200 shadow-sm hover:shadow-[0_20px_40px_rgba(121,63,223,0.12)] transition-all duration-500 cursor-pointer"
             >
               {/* Image */}
-              <div className="relative h-64 md:h-72 w-full overflow-hidden">
+              <Link href={'/products'} className="relative h-64 md:h-72 w-full overflow-hidden">
                 <img
                   src={item.image}
                   alt={item.title}
@@ -109,7 +109,7 @@ export default function ShopByCat() {
 
                 {/* Darker overlay at the bottom for crisp text readability */}
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-900/30 to-transparent" />
-              </div>
+              </Link>
 
               {/* Content */}
               <div className="absolute bottom-0 p-6 text-white w-full z-10">

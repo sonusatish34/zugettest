@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Navigation } from "swiper/modules";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-
+import Link from "next/link";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -24,7 +24,7 @@ function StoreCard({ store }) {
   const [imgLoaded, setImgLoaded] = useState(false);
 
   return (
-    <div className="group flex flex-col w-[200px] sm:w-[240px] md:w-[260px] cursor-pointer transition-all duration-300">
+    <Link href={'/products'} className="group flex flex-col w-[200px] sm:w-[240px] md:w-[260px] cursor-pointer transition-all duration-300">
       
       {/* Image Container */}
       <div className="relative overflow-hidden rounded-2xl w-full h-[220px] sm:h-[260px] bg-slate-200 border border-slate-200 shadow-sm transition-shadow duration-300 group-hover:shadow-lg">
@@ -64,7 +64,7 @@ function StoreCard({ store }) {
         )}
       </div>
 
-    </div>
+    </Link>
   );
 }
 
