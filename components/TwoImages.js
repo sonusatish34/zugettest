@@ -14,7 +14,7 @@ export default function TwoImages() {
 
       {/* Left Side - SHOP */}
       <Link 
-        href="/owner" 
+        href="/customer" 
         className="relative w-full h-1/2 md:h-full md:w-1/2 group overflow-hidden block"
       >
         <Image
@@ -24,12 +24,13 @@ export default function TwoImages() {
           className="object-cover object-center transition-transform duration-[1500ms] ease-out group-hover:scale-105"
           priority
         />
-        {/* Subtle dark gradient overlay for text readability & hover effect */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent transition-opacity duration-700 opacity-80 group-hover:opacity-100" />
+        
+        {/* Uniform slight black overlay for text readability & hover effect */}
+        <div className="absolute inset-0 bg-black/40 transition-opacity duration-700 group-hover:bg-black/60 z-0" />
 
-        {/* Bottom Call to Action */}
-        <div className="absolute bottom-12 left-0 w-full flex flex-col items-center z-10 translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
-          <h2 className="text-white text-2xl md:text-3xl font-light tracking-wider mb-3 drop-shadow-md">
+        {/* Centered Call to Action */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 transition-transform duration-500 scale-95 group-hover:scale-100">
+          <h2 className="text-white text-3xl md:text-4xl font-light tracking-wider mb-4 drop-shadow-lg">
             Fast Fashion
           </h2>
           <span className="text-white text-sm tracking-[0.2em] uppercase border-b border-white/30 pb-1 transition-colors duration-500 group-hover:border-white">
@@ -40,7 +41,7 @@ export default function TwoImages() {
 
       {/* Right Side - SELL */}
       <Link 
-        href="/customer" 
+        href="/owner" 
         className="relative w-full h-1/2 md:h-full md:w-1/2 group overflow-hidden block"
       >
         <Image
@@ -50,10 +51,13 @@ export default function TwoImages() {
           className="object-cover object-center transition-transform duration-[1500ms] ease-out group-hover:scale-105"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent transition-opacity duration-700 opacity-80 group-hover:opacity-100" />
 
-        <div className="absolute bottom-12 left-0 w-full flex flex-col items-center z-10 translate-y-2 transition-transform duration-500 group-hover:translate-y-0">
-          <h2 className="text-white text-2xl md:text-3xl font-light tracking-wider mb-3 drop-shadow-md">
+        {/* Uniform slight black overlay for text readability & hover effect */}
+        <div className="absolute inset-0 bg-black/40 transition-opacity duration-700 group-hover:bg-black/60 z-0" />
+
+        {/* Centered Call to Action */}
+        <div className="absolute inset-0 flex flex-col items-center justify-center z-10 transition-transform duration-500 scale-95 group-hover:scale-100">
+          <h2 className="text-white text-3xl md:text-4xl font-light tracking-wider mb-4 drop-shadow-lg">
             Merchant Portal
           </h2>
           <span className="text-white text-sm tracking-[0.2em] uppercase border-b border-white/30 pb-1 transition-colors duration-500 group-hover:border-white">
@@ -61,7 +65,6 @@ export default function TwoImages() {
           </span>
         </div>
       </Link>
-
     </div>
   );
 }

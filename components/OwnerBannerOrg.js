@@ -15,7 +15,6 @@ import {
 } from "lucide-react";
 
 const FashionMarquee = () => {
-  // Data array extracted from 34523232.jpg
   const features = [
     { text: "Easy Catalog Upload", icon: CloudUpload },
     { text: "Local Customer Orders", icon: Store },
@@ -25,10 +24,8 @@ const FashionMarquee = () => {
     { text: "Grow Locally", icon: TrendingUp },
   ];
 
-  // A helper component to render each item consistently
   const MarqueeItem = ({ Icon, text }) => (
     <div className="flex items-center gap-3 mx-8">
-      {/* Icon container styled similarly to the purple theme in the image */}
       <div className="p-2 bg-purple-100 rounded-lg text-purple-600">
         <Icon size={28} />
       </div>
@@ -37,19 +34,19 @@ const FashionMarquee = () => {
   );
 
   return (
-    <div className="w-full h-[10%] min-h-[80px] flex items-center overflow-hidden border-y border-slate-200 bg-white/90 z-20">
+    // Added shrink-0 so it never gets squished by the flex layout
+    <div className="w-full h-[10%] min-h-[80px] shrink-0 flex items-center overflow-hidden border-y border-slate-200 bg-white/90 z-20">
       <motion.div
         animate={{
           x: ["0%", "-50%"],
         }}
         transition={{
-          duration: 25, // Increased duration slightly since there is more content to read
+          duration: 25,
           repeat: Infinity,
           ease: "linear",
         }}
         className="flex whitespace-nowrap text-lg md:text-xl lg:text-2xl font-semibold text-black items-center"
       >
-        {/* First set of items */}
         <div className="flex items-center">
           {features.map((feature, index) => (
             <MarqueeItem 
@@ -60,7 +57,6 @@ const FashionMarquee = () => {
           ))}
         </div>
         
-        {/* Duplicated set of items for seamless infinite scrolling */}
         <div className="flex items-center">
           {features.map((feature, index) => (
             <MarqueeItem 
@@ -127,33 +123,30 @@ const HeaderOverlay = ({ locname = '' }) => {
   }, [isOpen]);
 
   return (
-    // Changed to 100dvh (Dynamic Viewport Height) to fill the exact screen size
     <div className="w-full h-[100dvh] flex flex-col overflow-hidden bg-slate-50 font-sans">
       
-      {/* TOP SECTION: IMAGE + NAV (90% HEIGHT) */}
-      <div className="relative w-full h-[90%] z-0">
+      {/* TOP SECTION: IMAGE + NAV */}
+      {/* Changed to flex-1 to safely fill remaining space without causing overflow */}
+      <div className="relative w-full flex-1 z-0">
         
-        {/* BACKGROUND BANNER IMAGE */}
         <div className="absolute inset-0 w-full h-full pointer-events-none">
           <Image
             src="/WhatsApp Image 2026-06-08 at 12.39.40 PM.jpeg"
             alt="Web Page Banner Backdrop"
             fill
             priority
-            className="lg:object-cover object-contain lg:object-top object-bottom"
+            // Changed from object-contain to object-cover to remove the gap
+            className="object-cover object-center lg:object-top"
           />
-          {/* Subtle gradient overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent opacity-60" />
         </div>
 
-        {/* FIXED NAVIGATION BAR */}
         <header 
           className={`fixed top-0 left-0 right-0 z-40 px-5 md:px-12 lg:px-20 flex justify-between items-center transition-all duration-400 ease-in-out ${
             "py-3 md:py-4 bg-white/95 backdrop-blur-md shadow-[0_4px_20px_rgba(0,0,0,0.05)] border-b border-slate-200 -translate-y-0" 
           }`}
         >
           
-          {/* Location Dropdown */}
           <div className="flex items-center gap-3 cursor-pointer select-none group">
             <div className="flex flex-col leading-tight">
               <span className={`text-[10px] font-extrabold tracking-widest uppercase transition-colors ${scrolled ? "text-[#793FDF]" : "text-[#793FDF]/90"}`}>
@@ -165,12 +158,10 @@ const HeaderOverlay = ({ locname = '' }) => {
             </div>
           </div>
 
-          {/* LOGO */}
           <Link href="/" className="tracking-wide text-2xl md:text-3xl font-black tracking-tighter drop-shadow-sm transition-all active:scale-95 text-black">
             Zu<span className="text-[#793FDF]">Get</span>
           </Link>
 
-          {/* Desktop Navigation Links */}
           <nav className="hidden lg:block">
             <ul className="flex gap-x-10 font-bold text-sm tracking-wide transition-colors text-black">
               {['Home', 'Shops', 'Contact Us', 'About Us'].map((item, idx) => (
@@ -186,7 +177,6 @@ const HeaderOverlay = ({ locname = '' }) => {
             </ul>
           </nav>
 
-          {/* Mobile Hamburger Menu Trigger Button */}
           <div className="lg:hidden block z-50">
             <button
               ref={buttonRef}
@@ -201,12 +191,11 @@ const HeaderOverlay = ({ locname = '' }) => {
             </button>
           </div>
 
-          {/* Mobile Sliding Navigation Drawer */}
           <nav
             ref={menuRef}
             aria-label="Mobile Navigation"
             className={`
-              fixed top-0 right-0 h-screen w-[75%] sm:w-[50%]
+              fixed top-0 right-0 lg:h-screen w-[75%] sm:w-[50%]
               bg-white/95 backdrop-blur-xl border-l border-slate-100
               shadow-[-10px_0_40px_rgba(0,0,0,0.1)]
               transition-transform duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]
@@ -236,7 +225,7 @@ const HeaderOverlay = ({ locname = '' }) => {
         </header>
       </div>
 
-      {/* BOTTOM SECTION: MARQUEE (10% HEIGHT) */}
+      {/* BOTTOM SECTION: MARQUEE */}
       <FashionMarquee />
       
     </div>

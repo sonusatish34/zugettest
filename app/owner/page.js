@@ -9,6 +9,7 @@ import Carousel from "@/components/Carousal";
 import ShopByCat from "@/components/ShopByCat";
 import AppDownload from "@/components/AppDownload";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+import AllBanners from "@/components/AllBanners";
 
 export default function OwnerHome() {
 
@@ -25,6 +26,7 @@ export default function OwnerHome() {
         {/* <OwnerBanner /> */}
         <OwnerBannerOrg />
          {/* <Womens /> */}
+         {/* <AllBanners /> */}
          <Collabrarors />
          {/* <FashionPhysicsBox /> */}
         {/*<Mens />
