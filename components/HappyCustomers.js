@@ -103,7 +103,7 @@ function TestimonialCard({ review }) {
         </div>
 
         {/* Content Section (Optimized layout size spacing) */}
-        <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-normal mb-5 line-clamp-5">
+        <p className="text-slate-600 text-xs md:text-sm leading-relaxed font-normal mb-5 line-clamp-5 w-[121px]">
           "{review.text}"
         </p>
       </div>

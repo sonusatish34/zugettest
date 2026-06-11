@@ -62,7 +62,7 @@ const HeaderSimple = () => {
   ];
 
   return (
-    <div className="w-full lg:min-h-screen min-h-[333px] flex flex-col bg-slate-50 font-sans">
+    <div className="w-full lg:min-h-screen min-h-[263px] flex flex-col bg-slate-50 font-sans">
       
       {/* 1. NAVIGATION BAR */}
       <header className="w-full bg-white px-5 md:px-12 lg:px-20 py-4 md:py-5 flex justify-between items-center shadow-sm border-b border-slate-200 z-50">
