@@ -34,7 +34,7 @@ export default function OwnerHome() {
         {/* <HowItWorks /> */}
         {/* <GameClothes /> */}
         {/* <ElegantCarousel /> */}
-        {/* <Carousel/> */}
+        <Carousel/>
         <ShopByCat/>
         <AppDownload />
         <TopCategories />
