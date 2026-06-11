@@ -136,7 +136,7 @@ const HeaderOverlay = ({ locname = '' }) => {
             fill
             priority
             // Changed from object-contain to object-cover to remove the gap
-            className="object-cover object-center lg:object-top"
+            className="lg:object-cover object-contain object-center lg:object-top"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-transparent to-transparent opacity-60" />
         </div>

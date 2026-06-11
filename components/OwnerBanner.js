@@ -265,39 +265,7 @@ const HeaderOverlay = ({ locname = '' }) => {
         <div className="flex flex-col items-center gap-6 py-12 px-4">
 
           {/* ── Two CTA Cards ── */}
-          <div className="flex flex-wrap items-center justify-center gap-4 w-full max-w-2xl">
-
-            {/* Customer Card */}
-            <div
-              className="flex flex-col justify-between rounded-2xl px-8 py-6 w-[280px] border border-white/15 hover:bg-[#ff2d78] cursor-pointer no-underline"
-            >
-              <p className="text-[10px] tracking-[0.35em] uppercase font-mono text-white/70 mb-4">
-                I Want To Shop
-              </p>
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-serif font-black text-[1.2rem] leading-tight text-white">
-                  <HoverRollLink text="I'm a Customer →" href="/shop" />
-                </span>
-                <span className="text-2xl">🛍️</span>
-              </div>
-            </div>
-
-            {/* Partner Card */}
-            <div
-              className="flex flex-col justify-between rounded-2xl px-8 py-6 w-[280px] bg-white/5 border hover:bg-[#ff2d78] border-white/15 cursor-pointer no-underline"
-            >
-              <p className="text-[10px] tracking-[0.35em] uppercase font-mono text-white/50 mb-4">
-                Grow With Us
-              </p>
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-serif font-black text-[1.1rem] leading-tight text-white">
-                  <HoverRollLink text="I'm a Partner → " href="/shop" />
-                </span>
-                <span className="text-2xl">🏪</span>
-              </div>
-            </div>
-
-          </div>
+          
 
           {/* ── Trust Strip ── */}
           <div className="flex flex-wrap gap-5 items-center justify-center font-mono text-[9px] tracking-[0.35em] uppercase text-white/20">
